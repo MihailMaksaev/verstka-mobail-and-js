@@ -1,0 +1,60 @@
+﻿
+#photoIconsForm{
+  
+  overflow: hidden;
+  margin-left: 15%;
+  margin-right: 15%;
+  & img{
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 0px;
+	z-index: 1;	
+  }
+
+}
+
+.divForIconsImage{
+width: 150px;
+height: 200px;
+position: relative;
+margin: 20px;
+float:left;
+
+    &>div{
+		position: absolute;
+		z-index: 2;
+		width: 150px;
+        height: 200px;
+		
+		
+		&>div{
+			text-align: center;
+		}
+	}
+	
+	& .deletePhoto{
+		
+		float: right;
+		width: 20px;
+		height: 20px;
+		margin: 0px;
+		padding: 0px;
+		
+	}
+	& .deletePhoto:hover{
+		cursor: pointer;
+	}
+	
+	& p {
+		padding-top: 85px;
+		color: white;
+		border-bottom: 2px dashed  white;
+		text-align: center;
+		
+		
+	}
+	& p:hover{
+		cursor: pointer;
+	}
+}

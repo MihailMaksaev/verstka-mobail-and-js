@@ -2,10 +2,11 @@
 <head>
 <title> Diven'N'Photo </title>
 
+<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>-->
 </head>
 <body>
-
-<!-- меню --> 
+ 
+<!-- меню -->  
 <div id="diven-photo-menu">
     <div class="label"></div>
 	
@@ -27,9 +28,8 @@
     </div>
 </div>
 
-
 <!-- форма -->
-<form>
+<form id="mainForm">
   <h2> Подайте заявку уже сейчас </h2>
   
   <div class="form-group">
@@ -47,13 +47,9 @@
     <input type="text" class="form-control" id="exampleTelephone" placeholder="">
   </div>
   
-  <div class="form-group">
-    <label for="exampleInputFile">Прикрепить файл</label>
-    <input type="file" id="exampleInputFile">
-  </div>
+  <button id="attachFileBtn"> Прикрепить файл </button>
   
-  <div id="photoIconsForm"> </div>
-  
+  <div id="photoIconsForm"> </div>  
   <hr />
   <p> Сумма -500 р </p>
   <p><a href="#"> ознакомиться с условиями фотоконкурса </a></p>

@@ -9,7 +9,7 @@ $mainColor: #00CCCC;
 	margin: 5px;
 	background-color: #FFFFCC;
 	height: $menuHeight;
-	min-width: 350px;
+	min-width: 1000px;
 	
 	& div.label:after {
      content: ""; 
@@ -44,26 +44,15 @@ $mainColor: #00CCCC;
 	
 	& .buttons-centre{
 		
-		display: none;
-	}
-	
-
-	
-} 
-
-
-@media all and (min-width: 1000px) {
-	
-		#diven-photo-menu {
-			
-			& .buttons-centre{
-			    display: block;
-		        width: 65%;
+		
+		display: block;
+		        
+				min-width: 650px;
 		        float: left;
                 border-left: 1px solid $mainColor;	
                  border-right: 1px solid $mainColor;
-                			 
-				& div{
+				 
+				 	& div{
 					height: $menuHeight;
 					float: left;
 					
@@ -84,8 +73,70 @@ $mainColor: #00CCCC;
 					    font-size: 18px;
                         color: $mainColor;						
 						float: left;
+						& a{
+							text-decoration: none;
+							color: #00CCCC;
+						}
 					}
 				}
+	}
+	
+    & .other-links{
+		display: none;
+		margin-top: 30px;
+		padding-top: 10px;
+		width: 100%;
+		padding-left: 10px;
+		background-color:  rgba( 0, 0, 0, 0.8); 
+		
+		
+		& ul{
+			list-style-type: none;
+			
+		}
+		& li {
+			color: $mainColor;
+			font-size: 25px;
+			padding: 20px;
+			& a{
+				text-decoration: none;
+				color: #00CCCC;
+			}
+			
+		}
+	}
+	
+} 
+@media all and (max-width: 400px) { 
+
+  #diven-photo-menu {
+   min-width: 400px;
+	 
+	 & .buttons-centre{
+			    display: none;
+		        
+                			 
+				
+			} 
+	 & .other-links li{ 
+	 			
+			font-size: 20px;
+			padding: 10px;	 
+	   }
+	} 
+}	
+
+	
+
+@media all and (min-width: 1000px) {
+	
+		#diven-photo-menu {
+			
+			& .buttons-centre{
+			    display: block;
+		        width: 65%;
+                			 
+				
 			}
 			
 			& div.label{	
