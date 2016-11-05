@@ -7,7 +7,7 @@ $mainColor: #00CCCC;
 #diven-photo-menu {
 	
 	margin: 5px;
-	background-color: #FFFFCC;
+	
 	height: $menuHeight;
 	min-width: 1000px;
 	
@@ -25,15 +25,19 @@ $mainColor: #00CCCC;
 
 
     & .label {	
-        background-image: url(../image/close.png);
+        background-image: url(../image/burger-label-w.png);
 	    background-position-y:  center;
-		background-position-x: -10px;
+		background-position-x: 0px;
         width: calc($burgWidth +  $labelWidth);
         height: $menuHeight;
 		float: left;
-       	
-		
+       		
     }
+	& .label:hover {
+		
+		cursor: pointer;
+		
+	}
 	& .lang{	
         color: $mainColor;	
 		height: $menuHeight;
@@ -47,7 +51,7 @@ $mainColor: #00CCCC;
 		
 		display: block;
 		        
-				min-width: 650px;
+				min-width: 680px;
 		        float: left;
                 border-left: 1px solid $mainColor;	
                  border-right: 1px solid $mainColor;
@@ -55,6 +59,7 @@ $mainColor: #00CCCC;
 				 	& div{
 					height: $menuHeight;
 					float: left;
+					margin-left: 10px;
 					
 					& img{
 						padding-top: 10px;
@@ -88,6 +93,8 @@ $mainColor: #00CCCC;
 		width: 100%;
 		padding-left: 10px;
 		background-color:  rgba( 0, 0, 0, 0.8); 
+		position: relative;
+		z-index: 6;
 		
 		
 		& ul{

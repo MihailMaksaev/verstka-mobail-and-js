@@ -37,13 +37,14 @@ module.exports = {
         include: [
           path.resolve(__dirname, "src"),
         ],
-        test: /\.js$/
+        test: /\.js$/,
+		 plugins: ['transform-runtime']
       },
       {
         test:   /\.css$/,
         loader: "style-loader!css-loader!postcss-loader"
       },
-	  { test: /\.png$/,    loader: "url-loader?limit=10000&minetype=image/png" }
+	  { test: /\.png$/,    loader: "url-loader?limit=20000&minetype=image/png" }
     ]
   },
     postcss: function () {
