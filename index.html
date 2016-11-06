@@ -2,17 +2,18 @@
 <head>
 <title> Diven'N'Photo </title>
 
+<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>-->
 </head>
 <body>
-
-<!-- меню --> 
+ 
+<!-- меню -->  
 <div id="diven-photo-menu">
-    <div class="label"></div>
+    <div id="burger" class="label"></div>
 	
 	<div class="buttons-centre">
-	    <div><img src="image/ticet-w.png" alt="фото" /><p><a href="#">Получить билет</a></p></div>
-		<div><img src="image/expon-w.png" alt="фото" /><p><a href="#">Стать экспонентом</a></p></div>
-		<div><img src="image/photo-conc-w.png" alt="фото" /><p><a href="#">Учавствовать в фотоконкурсе</a></p></div>
+	    <div><img src="image/link1.png" alt="фото" /><p><a href="#">Получить билет</a></p></div>
+		<div><img src="image/link2.png" alt="фото" /><p><a href="#">Стать экспонентом</a></p></div>
+		<div><img src="image/link3.png" alt="фото" /><p><a href="#">Учавствовать в фотоконкурсе</a></p></div>
 	</div>
 	
 	<div class="lang">RU</div>
@@ -27,44 +28,39 @@
     </div>
 </div>
 
-
 <!-- форма -->
-<form>
-  <h2> Подайте заявку уже сейчас </h2>
+<form id="mainForm" name="photoForm">
+  <h3> ПОДАЙТЕ ЗАЯВКУ УЖЕ СЕЙЧАС </h3>
   
   <div class="form-group1">
     <label for="exampleFIO">ФИО</label>
-    <input type="text" class="form-control" id="exampleFIO" placeholder="">
+    <input type="text" name="fio" class="form-control" id="exampleFIO" placeholder="">
   </div>
   
   <div class="form-group1">
     <label for="exampleEmail">EMAIL</label>
-    <input type="email" class="form-control" id="exampleEmail" placeholder="">
+    <input type="email" name="email" class="form-control" id="exampleEmail" placeholder="">
   </div>
   
   <div class="form-group1">
     <label for="exampleTelephone">ТЕЛЕФОН</label>
-    <input type="text" class="form-control" id="exampleTelephone" placeholder="">
+    <input type="text" name="phone" class="form-control" id="exampleTelephone" placeholder="">
   </div>
   
-  <div class="form-group1">
-    <label for="exampleInputFile">Прикрепить файл</label>
-    <input type="file" id="exampleInputFile">
-  </div>
+  <button id="attachFileBtn"><p>ПРИКРЕПИТЬ ФАЙЛ</p><img src="image/clip.png" /> </button>
   
-  <div id="photoIconsForm"> </div>
-  
+  <div id="photoIconsForm"> </div>  
   <hr />
-  <p> Сумма -500 р </p>
-  <p><a href="#"> ознакомиться с условиями фотоконкурса </a></p>
+  <p> СУММА:<b> -500 р</b> </p>
+  <p><a class="formLink" href="#"> Ознакомиться с условиями фотоконкурса </a></p>
   
   
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Согласен с условиями
-    </label>
+  <div class="checkbox1">
+   
+      <input id="checkboxComfForm" type="checkbox">
+      <label for="checkboxComfForm"><b>Согласен с условиями</b></label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" id="photoFormSubmit" class="btn btn-default">ОТПРАВИТЬ</button>
 </form>
     
    
