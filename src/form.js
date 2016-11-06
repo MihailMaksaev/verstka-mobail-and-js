@@ -1,6 +1,4 @@
-﻿import './main.css' 
-import './modal.css'
-import './mainForm.css'
+﻿
 
 //console.log("webpack worck!");
 
@@ -51,14 +49,14 @@ function showModal(e, content){
 	
 	if(content){
 		content.style.display = "block";
-		stateModal.modalDiv.innerHTML = "<div class='headerModal'> <button id='closeModalBtn' class='closeBtn'>x</button> <p>ДОБАВИТЬ ФОТОГРАФИЮ</p></div>"+
+		stateModal.modalDiv.innerHTML = "<div class='headerModal'> <div id='closeModalBtn' class='closeBtn'>x</div> <p>ДОБАВИТЬ ФОТОГРАФИЮ</p></div>"+
 		                                '<button id="comfirmPhotoBtn" class="comfirmPhotoBtn">ГОТОВО</button>';
 		stateModal.modalDiv.appendChild(content);
 		console.log("редактирование")
 	}else{
 		
 		
-	stateModal.modalDiv.innerHTML = "<div class='headerModal'> <button id='closeModalBtn' class='closeBtn'>X</button> <h3>ДОБАВИТЬ ФОТОГРАФИЮ</h3></div>"+
+	stateModal.modalDiv.innerHTML = "<div class='headerModal'> <div id='closeModalBtn' class='closeBtn'>X</div> <h3>ДОБАВИТЬ ФОТОГРАФИЮ</h3></div>"+
 	                                '<button id="comfirmPhotoBtn" class="comfirmPhotoBtn">ГОТОВО</button>'+
                     "<div id='contentModal-"+stateModal.numFiles+"' class='contentModal'>"+
 					     "<div class='form-group2'>"+
@@ -76,7 +74,7 @@ function showModal(e, content){
 						  
 						  "<div class='form-group2'>"+
                             '<label for="additional-'+stateModal.numFiles+'">ДОПОЛНИТЕЛЬНО</label>'+
-							'<p class="additionalBtn"> Специальные премии <span> > </span> </p>'+
+							'<p class="additionalBtn"> Специальные премии  <span><b> &#x2228;</b> </span> </p>'+
 						    '<div class="additionalList" id="additional-'+stateModal.numFiles+'">'+
 							
 							'</div>'+
@@ -178,7 +176,7 @@ function addIcon (content){
 	var nomination = content.querySelector("input[name='nomination-"+stateModal.numFiles+"']").value;
 
 	
-	div.innerHTML = '<div><button class="deletePhoto" data-remove-id="contentModal-'+stateModal.numFiles+'" id="deletePhoto-'+stateModal.numFiles+'">x</button>'+
+	div.innerHTML = '<div><div class="deletePhoto" data-remove-id="contentModal-'+stateModal.numFiles+'" id="deletePhoto-'+stateModal.numFiles+'">x</div>'+
 	                '<p>редактировать</p>'+
 					'<div><span><b>Номинация</b></span><br>\"'+nomination+ '\"</div></div>';
 	
@@ -210,7 +208,7 @@ function addIcon (content){
 	
 	
 	//document.getElementById('deletePhoto-'+stateModal.numFiles).addEventListener('click', removePhotoIcon);
-	div.querySelector("button").addEventListener('click', removePhotoIcon);
+	div.querySelector(".deletePhoto").addEventListener('click', removePhotoIcon);
 	div.querySelector("p").addEventListener('click', editPhotoIcon);
 	
 	
@@ -249,6 +247,12 @@ function listAdditionalModal (e){
 					if(stateModal.listAdditional.childNodes[i].checked != true){
 						stateModal.listAdditional.removeChild(stateModal.listAdditional.childNodes[i]);
 						stateModal.listAdditional.removeChild(stateModal.listAdditional.childNodes[i]);
+						i--;
+					}else{
+						var onRemove = stateModal.listAdditional.childNodes[i];
+						var onRemoveL = stateModal.listAdditional.childNodes[i+1];
+						
+						onRemoveL.addEventListener("click",  deleteCheck.bind(null, onRemoveL, onRemove));
 					}
 				}
 				
@@ -273,7 +277,7 @@ function removePhotoIcon(e){
 function editPhotoIcon(e){
 	e.preventDefault();
 	var editIcon = e.target.closest('.divForIconsImage');
-	var editContentId = editIcon.querySelector('button').getAttribute('data-remove-id');
+	var editContentId = editIcon.querySelector('.deletePhoto').getAttribute('data-remove-id');
 	var editContent = document.getElementById(editContentId);
 	editIcon.remove();
 	
@@ -289,6 +293,12 @@ function changeFileFn(e){
 
 	document.getElementsByClassName("fileInpImg")[0].innerHTML = stateModal.file.files[0].name;
 
+}
+
+function deleteCheck(label, box, e){
+	
+	label.remove();
+	box.remove();
 }
 
 

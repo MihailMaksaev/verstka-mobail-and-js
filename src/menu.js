@@ -12,6 +12,7 @@ export function getMenu(){
 	menuState.label.addEventListener("click", clickOnBurger);
 	
 	menuState.num =1;
+	menuState.buttonsInBurger =false;
 }
 
 
@@ -24,8 +25,29 @@ function clickOnBurger (){
 	
 	menuState.menuModal.style.display = "block";
 	
+	if( document.documentElement.clientWidth < 400 && !menuState.buttonsInBurger){
+		
+		menuState.buttonsInBurger =true;		
+		menuState.buttons = document.getElementsByClassName('buttons-centre')[0];
+		menuState.buttons.className = "buttons-centre buttons-centreMobail";
+		menuState.menuModal.appendChild(menuState.buttons);
+		
+	}
+	
 		
 	}else{
+		
+		if( menuState.buttonsInBurger){ 
+		
+		       menuState.buttonsInBurger =false;		
+		      // var buttons = document.getElementsByClassName('buttons-centre')[0];
+		      // delete buttons.style.display;
+			  menuState.buttons.className = "buttons-centre";
+			   var list = document.getElementById("diven-photo-menu")
+		       list.insertBefore(menuState.buttons, list.children[1]);
+		
+		}
+		
 		
 	menuState.label.style.backgroundImage = "url(../image/burger-label-w.png)";
 	
@@ -34,5 +56,5 @@ function clickOnBurger (){
 	menuState.menuModal.style.display = "none";
 	}
     menuState.num++;
-	console.log("click1");
+	//console.log("click1");
 }
